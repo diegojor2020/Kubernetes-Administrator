@@ -1,0 +1,8 @@
+.ssh/
+.kube/
+.cache/
+snap/
+.bash_history
+.bashrc
+.profile
+.viminfo
