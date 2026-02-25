@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: high-memory-pod
+  namespace: my-namespace
+spec:
+  containers:
+  - name: high-memory-container
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "520Mi"  # Isso excede o limite de memória definido no LimitRange
+        cpu: "0.25"
+      requests:
+        memory: "64Mi"
+        cpu: "0.1"

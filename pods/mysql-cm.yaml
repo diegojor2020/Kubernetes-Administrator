@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  mysql-config
+data:
+  MYSQL_ROOT_PASSWORD: LinuxForce01
+  MYSQL_USER: myuser
+  MYSQL_PASSWORD: LinuxForce01
+  MYSQL_DATABASE: mydatabase  

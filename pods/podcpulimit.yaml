@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: high-cpu-pod
+  namespace: my-namespace
+spec:
+  containers:
+  - name: high-cpu-container
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "1.5"
+      requests:
+        memory: "64Mi"
+        cpu: "0.1"

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ocsinventory-agent-daemonset
+  labels:
+    app: ocsinventory-agent
+spec:
+  selector:
+    matchLabels:
+      app: ocsinventory-agent
+  template:
+    metadata:
+      labels:
+        app: ocsinventory-agent
+    spec:
+      containers:
+      - name: ocsinventory-agent
+        image: nginx:1.21
+        
+ 
+      
