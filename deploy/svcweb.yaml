@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-web
+
+  template:
+    metadata:
+      labels:
+        app: my-web
+        deployment: my-web-deployment  # Rótulo para identificar o Deployment
+
+    spec:
+      containers:
+      - name: my-web-container
+        image: rogerramossilva/web
