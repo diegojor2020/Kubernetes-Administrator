@@ -1,159 +1,144 @@
-🚀 Kubernetes Administrator Lab
+Kubernetes Administrator Labs
 
-Repositório contendo laboratórios práticos e exercícios relacionados à administração de clusters Kubernetes, com foco em troubleshooting, configuração de workloads e preparação para ambientes reais e certificação CKA (Certified Kubernetes Administrator).
+Repositório contendo laboratórios práticos, manifests YAML e exercícios focados em administração de clusters Kubernetes, com ênfase nos tópicos da certificação Certified Kubernetes Administrator (CKA) e cenários reais de operação.
 
 Este projeto demonstra conhecimentos em:
 
 Arquitetura de cluster Kubernetes
 
-Gerenciamento de workloads (Pods, Deployments, ReplicaSets, Jobs)
+Workloads e scheduling
 
-Scheduling (Taints, Tolerations, Affinity)
+Networking e services
 
-Networking (Services, DNS, Connectivity)
+Storage e volumes
 
-Storage (Volumes, Persistent Volumes, PVC)
+Troubleshooting e debugging
 
-Troubleshooting de clusters
+Administração com kubectl
 
-Comandos avançados com kubectl
-
-Administração de nós e recursos
-
-🧠 Objetivo
-
-O objetivo deste repositório é consolidar conhecimentos práticos em administração Kubernetes, simulando cenários reais de produção e troubleshooting encontrados no dia a dia de profissionais DevOps / SRE.
-
-Também serve como material de estudo para certificações como:
-
-CKA — Certified Kubernetes Administrator
-
-CKAD — Certified Kubernetes Application Developer
-
-🏗️ Ambiente Utilizado
-
-Cluster provisionado utilizando:
-
-Kubernetes (kubeadm / laboratório)
-
-Linux (Ubuntu / Rocky / VM)
-
-Container Runtime: containerd / Docker
-
-Virtualização: VirtualBox / VMware
-
-CLI: kubectl
+Configuração via YAML declarativo
 
 📂 Estrutura do Repositório
 Kubernetes-Administrator/
-│
 ├── pods/
 ├── deployments/
 ├── services/
-├── volumes/
+├── storage/
 ├── scheduling/
-├── jobs/
+├── monitoring/
 ├── troubleshooting/
-└── configs/
+└── manifests/
 
-Cada diretório contém manifestos YAML e exercícios relacionados ao tema.
+Cada diretório contém exemplos práticos com manifests Kubernetes e comandos administrativos utilizados no dia a dia de um administrador de cluster.
 
-⚙️ Conceitos Abordados
+🚀 Tecnologias Utilizadas
+
+Kubernetes (k8s)
+
+Docker / Container Runtime
+
+Kubectl CLI
+
+YAML
+
+Linux
+
+Kubeadm / Cluster Setup
+
+Networking (ClusterIP, NodePort, etc.)
+
+🧠 Conceitos Abordados
+Core Components
+
+API Server
+
+Controller Manager
+
+Scheduler
+
+ETCD
+
+Kubelet
+
+Kube-proxy
+
 Workloads
 
-Pod lifecycle
+Pods
 
-Multi-container pods
-
-Init containers
+ReplicaSets
 
 Deployments
 
-Rolling updates e rollback
+DaemonSets
 
-Jobs e CronJobs
+Jobs / CronJobs
 
 Scheduling
 
 Node Selector
 
-Node Affinity / Anti-Affinity
+Node Affinity
 
 Taints and Tolerations
 
-Resource Requests and Limits
-
-LimitRange e ResourceQuota
+Resource Requests & Limits
 
 Networking
 
-ClusterIP
+Services
 
-NodePort
+DNS interno
 
-LoadBalancer
-
-DNS interno do cluster
+Exposição de aplicações
 
 Comunicação entre Pods
 
-Debug de conectividade
-
 Storage
 
-emptyDir
+Volumes
 
-hostPath
+PersistentVolumes (PV)
 
-Persistent Volumes
+PersistentVolumeClaims (PVC)
 
-Persistent Volume Claims
-
-Storage Classes
+StorageClasses
 
 Troubleshooting
 
-Pods em estados falhos
-
-ContainerStatusUnknown
-
-Problemas de scheduling
-
-Issues de rede
+Debug de Pods
 
 Logs e eventos
 
-Debug de nós
+Diagnóstico de falhas de scheduling
 
-🔍 Comandos Importantes
-kubectl get pods -A
-kubectl describe pod <pod>
-kubectl logs <pod>
-kubectl exec -it <pod> -- bash
-kubectl get events
-kubectl top nodes
-kubectl top pods
-🧪 Exemplos de Execução
+Problemas de rede
 
-Aplicar recursos:
+⚙️ Pré-requisitos
 
+Antes de executar os laboratórios:
+
+# Verificar cluster
+kubectl get nodes
+
+# Verificar contexto
+kubectl config current-context
+
+Ambientes compatíveis:
+
+Minikube
+
+Kind
+
+Kubeadm
+
+Cluster Cloud (EKS, AKS, GKE)
+
+📌 Exemplos de Uso
+Criar um Pod
 kubectl apply -f pod.yaml
-
-Remover:
-
-kubectl delete -f pod.yaml
-
-Debug:
-
-kubectl describe node <node-name>
-📈 Habilidades Demonstradas
-
-Administração de clusters Kubernetes
-
-Troubleshooting avançado
-
-Infraestrutura como Código (YAML manifests)
-
-Conhecimento em Linux e containers
-
-Diagnóstico de problemas distribuídos
+kubectl get pods -o wide
+Descrever recurso
+kubectl describe pod nginx
+Logs
+kubectl logs nginx
